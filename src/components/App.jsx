@@ -4,6 +4,10 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Note from "./Note";
 import Card from "./Card";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Container, Row, Col } from 'react-bootstrap';
+
 
 class App extends React.Component {
     constructor(props) {
@@ -49,19 +53,20 @@ render() {
     return (
         <div className="App">
             <Header></Header>
-            {/* <Note></Note> */}
-            <div className="productlist">
-            {items.map(createCard)}                
-                {/* {items.map(item => (
-                    <li key={item.idIngredient}>
-                        {item.strIngredient}
-                        <Image 
-                            img={`https://www.themealdb.com/images/ingredients/${item.strIngredient}.png`}
-                        />                              
-                    </li>
-                ))} */}
-            </div>
-            {/* <Footer></Footer> */}
+            <Container>
+            <Row>
+            <Col className="col-9">
+                <div className="productlist">
+                {items.map(createCard)}                                
+                </div>
+            </Col>
+            <Col className="col-3">
+                <div className="productlist">
+                {items.map(createCard)}                                
+                </div>
+            </Col>
+            </Row>
+            </Container>
         </div>
     );
                 }
