@@ -1,9 +1,10 @@
 import React from "react";
-import Image from "./Image";
-import Footer from "./Footer";
+// import Image from "./Image";
+// import Footer from "./Footer";
 import Header from "./Header";
-import Note from "./Note";
+// npmimport Note from "./Note";
 import Card from "./Card";
+import Groceryform from "./Groceryform";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Container, Row, Col } from 'react-bootstrap';
@@ -35,7 +36,9 @@ componentDidMount() {
 render() {
 
     var { isLoaded, items } = this.state;
-    console.log(items);
+    // console.log(items);
+    const groceries = {...items};
+    console.log(groceries);
     if (!isLoaded) {
         return <div>Loading...</div>;
     }
@@ -44,6 +47,7 @@ render() {
         return (
           <Card
             key={item.idIngredient}
+            identifier={item.idIngredient}
             name={item.strIngredient}
             img={item.img}        
           />
@@ -55,16 +59,16 @@ render() {
             <Header></Header>
             <Container>
             <Row>
-            <Col className="col-9">
+            <Col className="col-md-3">
+                <div className="grocerylist">
+                    <Groceryform></Groceryform>                    
+                </div>
+            </Col>
+            <Col className="col-md-9">
                 <div className="productlist">
                 {items.map(createCard)}                                
                 </div>
-            </Col>
-            <Col className="col-3">
-                <div className="productlist">
-                {items.map(createCard)}                                
-                </div>
-            </Col>
+            </Col>            
             </Row>
             </Container>
         </div>
