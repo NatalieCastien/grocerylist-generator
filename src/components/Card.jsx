@@ -5,7 +5,10 @@ import Button from "./Button";
 
 function Card(props) {
   return (
-    <div className="card" onClick={props.onChecked}>
+    <div className="card" 
+    onClick={() => {
+      props.onChecked(props.name);
+    }}>
       <Container>
       <Row>
       {/* <Col className="productcolumn">     
