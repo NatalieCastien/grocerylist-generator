@@ -43,13 +43,18 @@ render() {
         return <div>Loading...</div>;
     }
 
+    function addItem() {
+        console.log('je hebt geklikt');
+    }
+
     function createCard(item) {
         return (
           <Card
             key={item.idIngredient}
             identifier={item.idIngredient}
             name={item.strIngredient}
-            img={item.img}        
+            img={item.img} 
+            onChecked={addItem}       
           />
         );
       }

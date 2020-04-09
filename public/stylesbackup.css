@@ -121,14 +121,15 @@ footer p {
 .circle-img {
   border-radius: 50%;
   border: 3px solid #DBBFAD;
-  width: 50px;
-  height: 50px;
+  width: 150px;
+  height: 150px;
   position: relative;
+  background-color: #efc7ac;
 }
 
 .name {
   font-size: 0.8em;
-  color: #2d3436;
+  color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -138,8 +139,6 @@ footer p {
 }
 
 .productcolumn {
-  padding-top: 8px;
-  margin-top: auto;
   margin-bottom: auto;
 }
 
@@ -171,21 +170,18 @@ footer p {
 }
 
 .productlist .card {
+  border: none;
   text-align: center;
   width: 13rem;
-  height: 5rem;
-  margin-left: 1rem;
-  margin-bottom: 1.5rem;
+  height: 13rem;
   padding: 0.3rem;
-  border-radius: 3px;
-  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05), 0 5px 20px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05), 0 5px 20px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: transparent;
   -webkit-transition: all 100ms ease-in-out;
   transition: all 100ms ease-in-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 0;
 }
 
 .productlist .card .container .row {
@@ -214,8 +210,18 @@ button {
   border-radius: 50% !important;
   width: 26px !important;
   font-size: 13px;
-  margin-top: -20px;
-  margin-left: -25px;
+  margin-top: -50px;
+  margin-left: -50px;
   position: absolute;
 }
-/*# sourceMappingURL=styles.css.map */
+
+.deleteButton {
+  border-radius: 50% !important;
+  width: 26px !important;
+  font-size: 13px;
+  color: red;
+  margin-left: 20px;
+  background-color: transparent;
+  border: none;
+}
+/*# sourceMappingURL=stylesbackup.css.map */

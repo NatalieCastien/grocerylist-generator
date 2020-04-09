@@ -1,11 +1,14 @@
 import React, {useState} from "react";
+import GroceryListItem from "./GroceryListItem";
+import GroceryInputField from "./GroceryInputField";
 
 function Groceryform() {
 
     const [name, setName] = useState("");
     const [grocerylistName, setGrocerylistName] = useState("Name grocerylist");
     const [list, setList] = useState([]);
-    const [inputText, setInput] = useState("");
+    
+
     const [showHeader, setShowHeader] = useState("none");
     const [showHeaderForm, setShowHeaderForm] = useState("inline-block");
     const [showList, setShowList] = useState("none");
@@ -22,19 +25,22 @@ function Groceryform() {
         event.preventDefault();
     }
 
-    function handleChange2(event) {
-        const item = event.target.value;
-        setInput(item);
-      };
     
-      function onSubmit(event) {
+    
+      function onAdd(inputText) {
         setList(prevItems => {
           return [inputText, ...prevItems] ;     
-        });
-        setInput("");
-        document.getElementById('groceryItem').focus();
-        document.getElementById('groceryItem').select();
-        event.preventDefault();
+        });               
+      }
+    
+      function deleteItem(id) {
+        setList(prevItems => {
+          return prevItems.filter(
+            (item, index) => {
+              return index !== id;
+            }
+          )
+        })
       }
 
     return (
@@ -53,15 +59,18 @@ function Groceryform() {
         <button type="submit">Save</button>
     </form>
 
-    <form className="form" onSubmit={onSubmit} style={{display: showList}}>
-        <input id="groceryItem" onChange={handleChange2} type="text" value={inputText}/>
-        <button>
-          <span>Add</span>
-        </button>
-    </form>      
+    <GroceryInputField onAdd={onAdd} />     
+
       <div>
         <ul>
-          {list.map(listItem => <li>{listItem}</li>)}          
+          {list.map((listItem, index) => (
+            <GroceryListItem
+            id={index}
+            key={index}
+            item={listItem}
+            onChecked={deleteItem}
+            />
+          ))}
         </ul>
       </div> 
       </div>   

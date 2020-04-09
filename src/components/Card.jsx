@@ -5,19 +5,23 @@ import Button from "./Button";
 
 function Card(props) {
   return (
-    <div className="card">
+    <div className="card" onClick={props.onChecked}>
       <Container>
       <Row>
-      <Col className="productcolumn">     
+      {/* <Col className="productcolumn">     
         <span className="name top">{props.name}</span>            
-      </Col>
+      </Col> */}
       <Col className="productcolumn">
         <Image cardimage={props.name} />
         </Col>
-        <Button 
+      </Row>
+      <Row className="addButtonRow">
+      <div className="addButtonDiv">
+        <Button
             identifier={props.identifier}
             name={props.name}
           />
+          </div>
       </Row>      
       </Container>
     </div>
