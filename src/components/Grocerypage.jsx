@@ -24,7 +24,9 @@ function Grocerypage(props) {
 
     const [name, setName] = useState("");
     const [grocerylistName, setGrocerylistName] = useState("Name grocerylist");
-    const [list, setList] = useState([]);
+    var [countCal, setCountCal] = useState(0);
+    const [groceryObject, setGroceryObject] = useState({name: "", count: 0})
+    const [list, setList] = useState([{name: "", count: countCal}]);
     
     const [showHeader, setShowHeader] = useState("none");
     const [showHeaderForm, setShowHeaderForm] = useState("inline-block");
@@ -33,12 +35,39 @@ function Grocerypage(props) {
     function handleChange(event) {
         setName(event.target.value);
     }
+
+    // Check whether product is already on the list
+    function productExists(productname) {
+      return list.some(function(item) {
+        return item.name == productname;
+      }); 
+    }
+
+    function getIndex(product) {
+      return list.findIndex(obj => obj.name === product);
+    }
     
     function addItem(productname) {
-        console.log(productname);
+        console.log(productname);        
+        const productOnList = productExists([productname]);
+        console.log(productOnList);
+        if (productOnList == false) {
         setList(prevItems => {
-            return [productname, ...prevItems] ;     
-            });                         
+          setCountCal(1);
+            return [{name: productname, count: countCal}, ...prevItems] ;     
+            });                      
+        } else {
+            const index = getIndex(productname);
+            const object = list[index];
+            const objectCount = object.count;            
+            const newCount = objectCount + 1;
+            
+            deleteItem(index);
+
+            setList(prevItems => {
+              return [{name: productname, count: newCount}, ...prevItems] ;     
+              });    
+        }   
     }
     
     function handleSubmit(event) {
@@ -48,10 +77,11 @@ function Grocerypage(props) {
         setShowList("inline");
         event.preventDefault();
     }
-    
-      function onAdd(inputText) {
+
+      function onAdd(name, count) {
+        count = +1;
         setList(prevItems => {
-          return [inputText, ...prevItems] ;     
+          return [{name: name, count: count}, ...prevItems] ;     
         });               
       }
     
@@ -96,8 +126,9 @@ function Grocerypage(props) {
                         <GroceryListItem
                         id={index}
                         key={index}
-                        item={listItem}
+                        item={listItem.name}
                         onChecked={deleteItem}
+                        count={listItem.count}
                         />
                     ))}
                     </ul>

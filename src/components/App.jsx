@@ -31,7 +31,7 @@ class App extends React.Component {
 
         var { isLoaded, items } = this.state;
         const groceries = {...items};
-        console.log(groceries);
+        // console.log(groceries);
         if (!isLoaded) {
             return <div>Loading...</div>;
         }    

@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 
-function Button(props) {
+function ListButton(props) {
     
 const [count, setCount] = useState(0);
 const [isMouseOver, setMouseOver] = useState(false);
+const itemCount = props.count;
 
   function handleClick() {
     if (count < 9) {
@@ -19,14 +20,14 @@ const [isMouseOver, setMouseOver] = useState(false);
   }
 
       return (
-        <button className="addButton"
+        <button className="listButton"
         style={{backgroundColor: isMouseOver ? "white" : "#0A8F83", color: isMouseOver ? "#0A8F83" : "white"}}
         id={props.identifier} 
         onClick={handleClick}
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
-        >{count} +</button>
+        >{itemCount} +</button>
       )
 }
 
-export default Button;
+export default ListButton;
