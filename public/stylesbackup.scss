@@ -143,6 +143,16 @@ li {
     margin-top: 4rem;
     margin-left: 4rem;
   }
+
+  .secondColumn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 4rem;
+    margin-top: 4rem;
+    max-width: 100%;
+  }
+
   .productlist {
     .card {
       border: none;
@@ -166,9 +176,8 @@ li {
       }
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-left: 4rem;
-    margin-top: 4rem;
+    justify-content: center;    
+    margin-top: 2rem;
     max-width: 100%;
   }
   button {
@@ -211,4 +220,51 @@ li {
     background-color: transparent;
     border: none;
   }
+  .inspirationButton {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
   
+
+  .recipelist {
+    .card {
+      border: none;
+        text-align: center;        
+        // height:13rem;
+        width: 15rem;
+        // margin-left: 1rem;
+        // margin-bottom: 1.5rem;
+        padding: 0.3rem;
+        // border-radius: 3px;
+        // box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05), 0 5px 20px rgba(0, 0, 0, 0.1);
+        background-color: white !important;
+        transition: all 100ms ease-in-out;
+        display: flex;
+        padding-top: 5px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+      .recipeCardImage {
+        width: 14rem;
+        height: 9rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .recipeImage {
+         width: 100%;
+         height: 100%;
+         margin-left: auto;
+         margin-right: auto;
+       }
+      .container {
+        .row {
+          padding: 0.1rem;
+        }
+      }
+      }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;    
+    margin-top: 2rem;
+    max-width: 100%;
+  }

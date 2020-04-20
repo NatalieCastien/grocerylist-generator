@@ -3,6 +3,8 @@ import Card from "./Card";
 // import Groceryform from "./Groceryform";
 import GroceryListItem from "./GroceryListItem";
 import GroceryInputField from "./GroceryInputField";
+import recipes from "../recipes";
+import RecipeCard from "./RecipeCard";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -24,13 +26,16 @@ function Grocerypage(props) {
 
     const [name, setName] = useState("");
     const [grocerylistName, setGrocerylistName] = useState("Name grocerylist");
-    var [countCal, setCountCal] = useState(0);
+    var [countCal, setCountCal] = useState(1);
     const [groceryObject, setGroceryObject] = useState({name: "", count: 0})
     const [list, setList] = useState([{name: "", count: countCal}]);
     
     const [showHeader, setShowHeader] = useState("none");
     const [showHeaderForm, setShowHeaderForm] = useState("inline-block");
     const [showList, setShowList] = useState("none");
+    const [showInspiration, setShowInspiration] = useState("none");
+    const [showProducts, setShowProducts] = useState("none");
+    const [showRecipes, setShowRecipes] = useState("none");
 
     function handleChange(event) {
         setName(event.target.value);
@@ -44,14 +49,14 @@ function Grocerypage(props) {
     }
 
     function getIndex(product) {
-      return list.findIndex(obj => obj.name === product);
+      return list.findIndex(obj => obj.name == product);
     }
     
     function addItem(productname) {
-        console.log(productname);        
+        // console.log(productname);        
         const productOnList = productExists([productname]);
-        console.log(productOnList);
-        if (productOnList == false) {
+        // console.log(productOnList);
+        if (productOnList === false) {
         setList(prevItems => {
           setCountCal(1);
             return [{name: productname, count: countCal}, ...prevItems] ;     
@@ -70,19 +75,52 @@ function Grocerypage(props) {
         }   
     }
     
+    function createRecipeCard(recipe) {
+      return (
+        <RecipeCard
+          key={recipe.id}
+          identifier={recipe.id}
+          name={recipe.name}
+          description={recipe.description}
+          img={recipe.img} 
+          ingredients={recipe.ingredients}
+          onChecked={addItem}       
+        />
+      );
+    }
+
     function handleSubmit(event) {
         setGrocerylistName(name);
         setShowHeader("inline");
         setShowHeaderForm("none");
         setShowList("inline");
+        setShowInspiration("flex");
+        // setShowProducts("flex");
         event.preventDefault();
     }
 
       function onAdd(name, count) {
-        count = +1;
+        // console.log(productname);        
+        const productOnList = productExists([name]);
+        // console.log(productOnList);
+        if (productOnList === false) {
         setList(prevItems => {
-          return [{name: name, count: count}, ...prevItems] ;     
-        });               
+          setCountCal(1);
+            return [{name: name, count: countCal}, ...prevItems] ;     
+            });                      
+        } else {
+            const index = getIndex(name);
+            const object = list[index];
+            const objectCount = object.count;            
+            const newCount = objectCount + 1;
+            
+            deleteItem(index);
+
+            setList(prevItems => {
+              return [{name: name, count: newCount}, ...prevItems] ;     
+              });    
+        } 
+        
       }
     
       function deleteItem(id) {
@@ -93,6 +131,16 @@ function Grocerypage(props) {
             }
           )
         })
+      }
+
+      function showInsp(event) {
+        if (event.target.id == "productsbutton") {
+          setShowProducts("flex");
+          setShowRecipes("none");
+        } else if (event.target.id == "recipesbutton") {
+          setShowProducts("none");
+          setShowRecipes("flex");
+        }
       }
 
 
@@ -138,8 +186,19 @@ function Grocerypage(props) {
             </Col>
 
             <Col className="col-md-9">
-                <div className="productlist">
+                <div className="secondColumn">
+                <div>
+                  <button id="productsbutton" onClick={showInsp} className="inspirationButton">Products</button>
+                  <button id="recipesbutton" onClick={showInsp} className="inspirationButton">Recipes</button>
+                </div>
+                
+                <div className="recipelist" style={{display: showRecipes}}>
+                  {props.recipes.map(createRecipeCard)}
+                </div>
+
+                <div className="productlist" style={{display: showProducts}}>
                 {props.items.map(createCard)}                                
+                </div>
                 </div>
             </Col>   
         </Row>

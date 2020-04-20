@@ -1,25 +1,32 @@
 import React from "react";
 import ListButton from "./ListButton";
 
+
 function GroceryListItem(props) {
-    return (
-        <div>
-            <li>
-                {props.item}
-                <span style={{marginLeft: "20px"}}>{props.count}</span>
-                <ListButton
-                    identifier={props.key}
-                    name={props.item}
-                    count={props.count}
-                />
-                <button className="deleteButton"
-                    onClick={() => {
-                        props.onChecked(props.id);
-                    }}>
-                    X
-                </button>
-            </li>
-        </div>
+    if (props.item !== "") {    
+        var product = props.item;
+        var productUppercase = product.charAt(0).toUpperCase() + product.slice(1);
+        return (
+            <div>
+                <li>
+                    {productUppercase}
+                    <span style={{marginLeft: "10px"}}>{props.count}</span>
+                    <ListButton                        
+                        identifier={props.key}
+                        name={props.item}
+                        count={props.count}
+                    />
+                    <button className="deleteButton"
+                        onClick={() => {
+                            props.onChecked(props.id);
+                        }}>
+                        X
+                    </button>
+                </li>
+            </div>
+        );
+    } else return (
+        <div></div>  
     );
 }
 
