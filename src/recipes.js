@@ -13,12 +13,12 @@ const recipes = [
             {     
                 id: 992,           
                 productname: "Coconut milk",
-                count: 1                
+                count: 2                
             },
             {        
                 id: 993,        
                 productname: "Peeled tomatoes",
-                count: 1                
+                count: 3                
             }
         ]
     },

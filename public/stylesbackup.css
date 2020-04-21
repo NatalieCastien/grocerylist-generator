@@ -15,6 +15,11 @@ body {
   padding: 0 16px;
 }
 
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 header {
   background-color: #0A8F83;
   margin: auto -16px;
@@ -52,18 +57,6 @@ header h1 {
   margin-bottom: 20px;
 }
 
-ul {
-  margin-top: 10px !important;
-}
-
-li {
-  text-align: left;
-  position: relative;
-  margin-bottom: 1px;
-  font-family: 'Indie Flower', cursive;
-  margin-left: 10px;
-}
-
 .groceryNote {
   width: 100%;
   height: auto;
@@ -95,34 +88,11 @@ footer p {
   color: #ccc;
 }
 
-.note {
-  background: #fff;
-  border-radius: 7px;
-  -webkit-box-shadow: 0 2px 5px #ccc;
-          box-shadow: 0 2px 5px #ccc;
-  padding: 10px;
-  width: 240px;
-  margin: 16px;
-  float: left;
-}
-
-.note h1 {
-  font-size: 1.1em;
-  margin-bottom: 6px;
-}
-
-.note p {
-  font-size: 1.1em;
-  margin-bottom: 10px;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
 .circle-img {
   border-radius: 50%;
   border: 3px solid #DBBFAD;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   position: relative;
   background-color: #efc7ac;
 }
@@ -152,7 +122,6 @@ footer p {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 4rem;
-  margin-left: 4rem;
 }
 
 .secondColumn {
@@ -164,7 +133,6 @@ footer p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-left: 4rem;
   margin-top: 4rem;
   max-width: 100%;
 }
@@ -185,8 +153,8 @@ footer p {
 .productlist .card {
   border: none;
   text-align: center;
-  width: 13rem;
-  height: 13rem;
+  width: 9rem;
+  height: 9rem;
   padding: 0.3rem;
   background-color: transparent;
   -webkit-transition: all 100ms ease-in-out;
@@ -208,11 +176,14 @@ button {
   outline: 0;
   background-color: #0A8F83;
   border: 1px solid #0A8F83;
-  padding: 2px 2px;
   color: white;
   border-radius: 3px !important;
-  width: 90px;
   font-size: 18px;
+}
+
+.squareButton {
+  width: 90px;
+  padding: 2px 2px;
 }
 
 .addButtonDiv {
@@ -223,17 +194,20 @@ button {
   border-radius: 50% !important;
   width: 26px !important;
   font-size: 13px;
-  margin-top: -50px;
-  margin-left: -50px;
+  margin-top: -40px;
+  margin-left: -40px;
   position: absolute;
+  padding: 2px 2px;
 }
 
 .listButton {
   border-radius: 50% !important;
-  width: 26px !important;
+  width: 20px !important;
   font-size: 13px;
-  margin-top: -50px;
-  margin-left: 50px;
+  margin-left: 10px;
+  background-color: transparent;
+  border: 1px solid #0A8F83;
+  color: #0A8F83;
 }
 
 .deleteButton {
@@ -241,7 +215,7 @@ button {
   width: 26px !important;
   font-size: 13px;
   color: red;
-  margin-left: 20px;
+  margin-left: 10px;
   background-color: transparent;
   border: none;
 }
@@ -249,6 +223,8 @@ button {
 .inspirationButton {
   margin-left: 5px;
   margin-right: 5px;
+  width: 90px;
+  padding: 2px 2px;
 }
 
 .recipelist {
@@ -269,7 +245,7 @@ button {
   text-align: center;
   width: 15rem;
   padding: 0.3rem;
-  background-color: white !important;
+  background-color: #efc7ac !important;
   -webkit-transition: all 100ms ease-in-out;
   transition: all 100ms ease-in-out;
   display: -webkit-box;
@@ -278,6 +254,7 @@ button {
   padding-top: 5px;
   margin-right: 5px;
   margin-bottom: 5px;
+  border: 3px solid #DBBFAD;
 }
 
 .recipelist .card .recipeCardImage {
@@ -296,5 +273,38 @@ button {
 
 .recipelist .card .container .row {
   padding: 0.1rem;
+}
+
+.toggleArrow {
+  width: 50%;
+}
+
+.togglebutton {
+  background-color: transparent !important;
+  border: none !important;
+  height: 2rem;
+  width: 2rem;
+  padding: 0.3rem !important;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px !important;
+}
+
+ul li {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1px;
+  font-family: 'Indie Flower', cursive;
+  margin-left: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=stylesbackup.css.map */

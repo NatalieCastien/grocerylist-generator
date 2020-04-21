@@ -12,16 +12,16 @@
     // background-color: #a3e0d0 !important;
     padding: 0 16px; 
   }
-  
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
   header {
     // background-color: #0fab80;
     background-color: #0A8F83;
     margin: auto -16px;
     padding: 16px 32px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-  }
-  
-  header {
     h1 {
         color: #fff;
         font-family: "McLaren", cursive;
@@ -51,16 +51,7 @@
   width: 100%;
   margin-bottom: 20px;
 }
-ul {
-  margin-top: 10px !important;
-}
-li {
-  text-align: left;
-  position: relative;
-  margin-bottom: 1px;
-  font-family: 'Indie Flower', cursive;
-  margin-left: 10px;
-}
+
 .groceryNote {
   width: 100%;
   height: auto;
@@ -91,32 +82,32 @@ li {
     color: #ccc;
   }
 }
-  .note {
-    h1 {
-        font-size: 1.1em;
-        margin-bottom: 6px;
-      }
-      p {
-        font-size: 1.1em;
-        margin-bottom: 10px;
-        white-space: pre-wrap;
-        word-wrap: break-word;
-      }
-    background: #fff;
-    border-radius: 7px;
-    box-shadow: 0 2px 5px #ccc;
-    padding: 10px;
-    width: 240px;
-    margin: 16px;
-    float: left;
-  }
+  // .note {
+  //   h1 {
+  //       font-size: 1.1em;
+  //       margin-bottom: 6px;
+  //     }
+  //     p {
+  //       font-size: 1.1em;
+  //       margin-bottom: 10px;
+  //       white-space: pre-wrap;
+  //       word-wrap: break-word;
+  //     }
+  //   background: #fff;
+  //   border-radius: 7px;
+  //   box-shadow: 0 2px 5px #ccc;
+  //   padding: 10px;
+  //   width: 240px;
+  //   margin: 16px;
+  //   float: left;
+  // }
   
   .circle-img{
     border-radius: 50%;
     border: 3px solid #DBBFAD;
     // border: 3px solid #0fab80;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     // margin-bottom: 0.7rem;
     position: relative;
     // vertical-align: middle;
@@ -128,27 +119,22 @@ li {
     color: transparent;
     display: flex;
     flex: 1;   
-    // padding-top: 1rem;     
-    // padding-bottom: 1rem;
-  }
+   }
   .productcolumn {
-    // padding-top:8px;
-    // margin-top: auto;
-    margin-bottom: auto;
+       margin-bottom: auto;
   }
   .grocerylist {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 4rem;
-    margin-left: 4rem;
+    // margin-left: 4rem;
   }
-
   .secondColumn {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left: 4rem;
+    // margin-left: 4rem;
     margin-top: 4rem;
     max-width: 100%;
   }
@@ -157,8 +143,8 @@ li {
     .card {
       border: none;
         text-align: center;
-        width: 13rem;
-        height:13rem;
+        width: 9rem;
+        height:9rem;
         // margin-left: 1rem;
         // margin-bottom: 1.5rem;
         padding: 0.3rem;
@@ -183,15 +169,16 @@ li {
   button {
     appearance: none;
     outline: 0;
-    // background-color: #0fab80;
     background-color: #0A8F83;
     border: 1px solid #0A8F83;
-    // border: 1px solid #0fab80;
-    padding: 2px 2px;
+    
     color: white;
     border-radius: 3px !important;
-    width: 90px;
     font-size: 18px;
+  }
+  .squareButton {
+    width: 90px;
+    padding: 2px 2px;
   }
   .addButtonDiv {
     margin-left: auto;
@@ -200,29 +187,34 @@ li {
     border-radius: 50% !important;
     width: 26px !important;
     font-size: 13px;
-    margin-top: -50px; 
-    margin-left: -50px; 
+    margin-top: -40px; 
+    margin-left: -40px; 
     position: absolute;
+    padding: 2px 2px;
   }
   .listButton {
     border-radius: 50% !important;
-    width: 26px !important;
-    font-size: 13px;
-    margin-top: -50px; 
-    margin-left: 50px; 
+    width: 20px !important;
+    font-size: 13px;     
+    margin-left: 10px; 
+    background-color: transparent;
+    border: 1px solid #0A8F83;    
+    color: #0A8F83;
   }
   .deleteButton {
     border-radius: 50% !important;
     width: 26px !important;
     font-size: 13px;
     color: red;
-    margin-left: 20px;
+    margin-left: 10px;
     background-color: transparent;
     border: none;
   }
   .inspirationButton {
     margin-left: 5px;
     margin-right: 5px;
+    width: 90px;
+    padding: 2px 2px;
   }
 
   
@@ -238,12 +230,13 @@ li {
         padding: 0.3rem;
         // border-radius: 3px;
         // box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05), 0 5px 20px rgba(0, 0, 0, 0.1);
-        background-color: white !important;
+        background-color: #efc7ac !important;
         transition: all 100ms ease-in-out;
         display: flex;
         padding-top: 5px;
         margin-right: 5px;
         margin-bottom: 5px;
+        border: 3px solid #DBBFAD;
       .recipeCardImage {
         width: 14rem;
         height: 9rem;
@@ -268,3 +261,31 @@ li {
     margin-top: 2rem;
     max-width: 100%;
   }
+
+  .toggleArrow {
+    width: 50%;
+  }
+  .togglebutton {
+    background-color: transparent !important;
+    border: none !important;
+    height: 2rem;
+    width: 2rem;
+    padding: 0.3rem !important;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px !important;
+   li {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1px;
+    font-family: 'Indie Flower', cursive;
+    margin-left: 10px;  
+    justify-content: space-between;
+    display: flex;
+  }
+}
+

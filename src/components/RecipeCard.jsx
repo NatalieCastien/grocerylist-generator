@@ -1,5 +1,6 @@
 import React from "react";
-import {Card, UncontrolledCollapse, Button} from 'react-bootstrap';
+import {Card, Button} from 'react-bootstrap';
+import { UncontrolledCollapse, CardBody } from 'reactstrap';
 // import Button from "./Button";
 
 function RecipeCard(props) {  
@@ -10,10 +11,16 @@ function RecipeCard(props) {
     );
   }
 
+  const recipeId = props.identifier;
+  const togglerId = "toggler" + recipeId;
+  const togglerHash = "#" + togglerId;
   
 
   return (
-      <Card className="recipeCard">
+      <Card className="recipeCard"
+        onClick={() => {
+        props.onChecked(props.ingredients);
+      }}>
         <div className="recipeCardImage">
           <img className="recipeImage" src={props.img} alt="Card image cap" />
         </div>
@@ -22,16 +29,12 @@ function RecipeCard(props) {
           <p>{props.description}</p>
           </div>
           <div>
-          <Button color="primary" id="toggler" style={{ marginBottom: '1rem' }}>
-            Toggle
+          <Button className="togglebutton" id={togglerId}>
+            <img className="toggleArrow" src="arrow-down.png" alt="arrow down" />
           </Button>
 
-          <UncontrolledCollapse toggler="#toggler">
-              <Card>
-                <div>
-                {props.ingredients.map(log)}
-                </div>
-              </Card>
+          <UncontrolledCollapse toggler={togglerHash}>              
+                {props.ingredients.map(log)}                
             </UncontrolledCollapse>            
           {/* <Button>Button</Button> */}
         </div>

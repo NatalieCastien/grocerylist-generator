@@ -1,17 +1,12 @@
 import React, {useState} from "react";
 
-function ListButton(props) {
+function SubtractButton(props) {
     
 const [count, setCount] = useState(0);
 const [isMouseOver, setMouseOver] = useState(false);
 const itemCount = props.count;
-
-  function handleClick() {
-    if (count < 9) {
-    setCount(count + 1);
-    console.log('clicked');    
-    }
-  }  
+const buttonKey = "subtractButton" + props.id;
+  
   function handleMouseOver() {
     setMouseOver(true);
   }
@@ -21,13 +16,19 @@ const itemCount = props.count;
 
       return (
         <button className="listButton"
-        style={{backgroundColor: isMouseOver ? "white" : "#0A8F83", color: isMouseOver ? "#0A8F83" : "white"}}
+        style={{backgroundColor: isMouseOver ? "#0A8F83" : "transparent", color: isMouseOver ? "white" : "#0A8F83"}}
         id={props.identifier} 
-        onClick={handleClick}
+        // onClick={handleClick}      
+        onClick={() => {
+            props.onSubtract(props.name);
+        }}
+        key={buttonKey}
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
-        >{itemCount} +</button>
+        count={props.count}     
+        name={props.name}   
+        >-</button>
       )
 }
 
-export default ListButton;
+export default SubtractButton;
