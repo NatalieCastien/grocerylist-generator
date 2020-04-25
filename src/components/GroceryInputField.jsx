@@ -8,16 +8,24 @@ function GroceryInputField(props) {
         setInputText(newItem);
       };
 
+    function handleClick() {
+      props.onAdd(inputText);
+      setInputText("");
+      document.getElementById('groceryItem').focus();
+      document.getElementById('groceryItem').select(); 
+    }
+
+    function handleKeyPress(event) {
+      if (event.key === "Enter") {
+        handleClick();
+      }
+    }
+
     return (
     
-    <div className="form">
-        <input id="groceryItem" onChange={handleChange} type="text" value={inputText}/>
-        <button onClick={() => {
-            props.onAdd(inputText);
-            setInputText("");
-            document.getElementById('groceryItem').focus();
-            document.getElementById('groceryItem').select(); 
-        }}>
+    <div className="form"  onKeyPress={handleKeyPress}>
+        <input placeholder="Add a product manually" id="groceryItem" onChange={handleChange} type="text" value={inputText}/>
+        <button className="squareButton" onClick={handleClick}>
           <span>Add</span>
         </button>
     </div> 

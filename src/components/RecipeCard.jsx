@@ -1,42 +1,58 @@
 import React from "react";
-import {Card, Button} from 'react-bootstrap';
+import {Card, Button, Row, Col} from 'react-bootstrap';
 import { UncontrolledCollapse, CardBody } from 'reactstrap';
-// import Button from "./Button";
+import AddRecipeButton from "./AddRecipeButton";
 
 function RecipeCard(props) {  
 
-  function log(ingredient) {
+  function showIngredients(ingredient) {
     return (
-      <p>{ingredient.productname} {ingredient.count}</p>     
+      <div>
+        <Row>
+          <Col className="col-10" style={{textAlign: "left"}}>
+            <p>{ingredient.productname}</p>
+          </Col>
+          <Col className="col-2">
+            <p>{ingredient.count}</p>
+          </Col>
+        </Row>
+      </div>     
     );
   }
 
   const recipeId = props.identifier;
   const togglerId = "toggler" + recipeId;
   const togglerHash = "#" + togglerId;
-  
 
   return (
-      <Card className="recipeCard"
-        onClick={() => {
-        props.onChecked(props.ingredients);
-      }}>
+      <Card className="recipeCard">
         <div className="recipeCardImage">
           <img className="recipeImage" src={props.img} alt="Card image cap" />
         </div>
-        <div>
+
+        <div className="" 
+             onClick={() => {
+               props.onChecked(props.ingredients);
+             }}>
+             <AddRecipeButton            
+               identifier={props.recipeId}
+               name={props.name}
+             />      
+        </div>
+
+        <div className="recipeNameBox">
           <h4>{props.name}</h4>
           <p>{props.description}</p>
           </div>
-          <div>
+          <div>      
           <Button className="togglebutton" id={togglerId}>
             <img className="toggleArrow" src="arrow-down.png" alt="arrow down" />
           </Button>
 
           <UncontrolledCollapse toggler={togglerHash}>              
-                {props.ingredients.map(log)}                
+                {props.ingredients.map(showIngredients)}                
             </UncontrolledCollapse>            
-          {/* <Button>Button</Button> */}
+          
         </div>
       </Card>
   );

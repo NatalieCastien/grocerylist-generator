@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function Button(props) {
+function AddProductButton(props) {
     
 const [count, setCount] = useState(0);
 const [isMouseOver, setMouseOver] = useState(false);
@@ -29,4 +29,4 @@ const [isMouseOver, setMouseOver] = useState(false);
       )
 }
 
-export default Button;
+export default AddProductButton;

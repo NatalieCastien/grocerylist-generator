@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "./Image";
 import {Container, Row, Col} from 'react-bootstrap';
-import Button from "./Button";
+import AddProductButton from "./AddProductButton";
 
-function Card(props) {
+function ProductCard(props) {
   return (
     <div className="card" 
     onClick={() => {
@@ -20,15 +20,20 @@ function Card(props) {
       </Row>
       <Row className="addButtonRow">
       <div className="addButtonDiv">
-        <Button
+        <AddProductButton
             identifier={props.identifier}
             name={props.name}
           />
-          </div>
+      </div>
+      </Row>
+      <Row>
+        <Col>
+          <p className="productCardName">{props.name}</p>
+        </Col>
       </Row>      
       </Container>
     </div>
   );
 }
 
-export default Card;
+export default ProductCard;

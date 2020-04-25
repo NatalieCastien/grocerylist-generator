@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Oswald&family=Sacramento&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -24,9 +28,61 @@
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
     h1 {
         color: #fff;
-        font-family: "McLaren", cursive;
+        // font-family: "McLaren", cursive;
+        font-family: 'Fredericka the Great', cursive;
         font-weight: 200;
+        font-size: 3.0rem;
   }
+}
+.inspirationHeader {
+  display: block;
+  font-family: 'Fredericka the Great', cursive;
+}
+.inspirationHeaderDiv {
+  text-align: center;
+  margin-top: 4rem;
+}
+.inspirationList {
+  .inspirationCardDiv {
+    :hover {
+      cursor: pointer;
+    }
+    .inspirationCard {
+      border: none;
+      text-align: center;        
+      // height:13rem;
+      width: 15rem;
+      // margin-left: 1rem;
+      // margin-bottom: 1.5rem;
+      // padding: 0.3rem;
+      // border-radius: 3px;
+      // box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05), 0 5px 20px rgba(0, 0, 0, 0.1);
+      background-color: #efc7ac !important;
+      transition: all 100ms ease-in-out;
+      display: flex;
+      // padding-top: 5px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      border: 3px solid #DBBFAD;
+    }
+    .inspirationImageDiv {
+      width: 100%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .inspirationImage {
+      width: 100%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;    
+  margin-top: 2rem;
+  max-width: 100%;
 }
 
 .grocerylistheading h1 {
@@ -135,7 +191,7 @@
     flex-wrap: wrap;
     justify-content: center;
     // margin-left: 4rem;
-    margin-top: 4rem;
+    margin-top: 1rem;
     max-width: 100%;
   }
 
@@ -198,7 +254,8 @@
     font-size: 13px;     
     margin-left: 10px; 
     background-color: transparent;
-    border: 1px solid #0A8F83;    
+    // border: 1px solid #0A8F83;    
+    border: none !important;
     color: #0A8F83;
   }
   .deleteButton {
@@ -210,11 +267,33 @@
     background-color: transparent;
     border: none;
   }
-  .inspirationButton {
+  .productsButton {
     margin-left: 5px;
     margin-right: 5px;
-    width: 90px;
-    padding: 2px 2px;
+    margin-bottom: 15px;
+    width: 240px;
+    height: 100px;
+    // padding: 2px 2px;
+    background-image: url(products.jpg);
+    background-position: center;
+    font-size: 3.6rem;
+    font-family: 'Amatic SC', cursive;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px #000000;
+  }
+  .recipesButton {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    width: 240px;
+    height: 100px;
+    // padding: 2px 2px;
+    background-image: url(madras.jpg);
+    background-position: center;
+    font-size: 3.6rem;
+    font-family: 'Amatic SC', cursive;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px #000000;
   }
 
   
@@ -272,6 +351,10 @@
     width: 2rem;
     padding: 0.3rem !important;
   }
+  .togglebutton:focus {
+    border: none !important;
+    box-shadow: none !important;
+  }
 
   ul {
     list-style: none;
@@ -288,4 +371,29 @@
     display: flex;
   }
 }
-
+.productCardName {
+  font-size: 1.0rem;
+  margin-top: -8px;
+  letter-spacing: 1px;
+  font-family: 'Amatic SC', cursive;
+}
+.recipeAddButton {
+  margin-left: 80px !important;
+  border-radius: 50% !important;
+  width: 26px !important;
+  font-size: 13px;
+  margin-top: -31px; 
+  margin-left: 85px; 
+  position: absolute;
+  padding: 2px 2px;
+}
+.recipeNameBox {
+  height: 80%;
+}
+.printcol-1 {
+  min-width: 200px;
+}
+.printButton {
+  margin-top: 58px;
+  padding: 2px 2px;
+}
