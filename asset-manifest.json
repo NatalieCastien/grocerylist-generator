@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/grocerylist-generator/static/js/main.526391e8.chunk.js",
+    "main.js.map": "/grocerylist-generator/static/js/main.526391e8.chunk.js.map",
+    "runtime-main.js": "/grocerylist-generator/static/js/runtime-main.3228c6f3.js",
+    "runtime-main.js.map": "/grocerylist-generator/static/js/runtime-main.3228c6f3.js.map",
+    "static/css/2.a5b4ddd2.chunk.css": "/grocerylist-generator/static/css/2.a5b4ddd2.chunk.css",
+    "static/js/2.6b4276ca.chunk.js": "/grocerylist-generator/static/js/2.6b4276ca.chunk.js",
+    "static/js/2.6b4276ca.chunk.js.map": "/grocerylist-generator/static/js/2.6b4276ca.chunk.js.map",
+    "index.html": "/grocerylist-generator/index.html",
+    "precache-manifest.e6971f25400015985a91fa97272e1a74.js": "/grocerylist-generator/precache-manifest.e6971f25400015985a91fa97272e1a74.js",
+    "service-worker.js": "/grocerylist-generator/service-worker.js",
+    "static/css/2.a5b4ddd2.chunk.css.map": "/grocerylist-generator/static/css/2.a5b4ddd2.chunk.css.map",
+    "static/js/2.6b4276ca.chunk.js.LICENSE.txt": "/grocerylist-generator/static/js/2.6b4276ca.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3228c6f3.js",
+    "static/css/2.a5b4ddd2.chunk.css",
+    "static/js/2.6b4276ca.chunk.js",
+    "static/js/main.526391e8.chunk.js"
+  ]
+}
