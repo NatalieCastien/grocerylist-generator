@@ -4,8 +4,12 @@ function Footer() {
     const currentDate = new Date();
     const year = currentDate.getFullYear();
     return (
-    <footer>
-        <p>Natalie Castien Copyright {year}</p>
+    <footer className="navbar-fixed-bottom">
+    <div className="footerContainer">
+        <div className="footerStyle">
+            <p className="footerText">© Natalie Castien {year}</p>
+        </div>
+    </div>
     </footer>)
 }
 

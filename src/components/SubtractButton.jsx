@@ -2,9 +2,7 @@ import React, {useState} from "react";
 
 function SubtractButton(props) {
     
-const [count, setCount] = useState(0);
 const [isMouseOver, setMouseOver] = useState(false);
-const itemCount = props.count;
 const buttonKey = "subtractButton" + props.id;
   
   function handleMouseOver() {
@@ -18,7 +16,6 @@ const buttonKey = "subtractButton" + props.id;
         <button className="listButton"
         style={{backgroundColor: isMouseOver ? "#0A8F83" : "transparent", color: isMouseOver ? "white" : "#0A8F83"}}
         id={props.identifier} 
-        // onClick={handleClick}      
         onClick={() => {
             props.onSubtract(props.name);
         }}

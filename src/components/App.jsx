@@ -1,11 +1,10 @@
 import React from "react";
 import Header from "./Header";
-// import Card from "./Card";
-// import Groceryform from "./Groceryform";
+import Footer from "./Footer";
 import Grocerypage from "./Grocerypage";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import recipes from "../recipes";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 class App extends React.Component {
     constructor(props) {
@@ -31,7 +30,6 @@ class App extends React.Component {
     render() {       
         var { isLoaded, items } = this.state;
         const groceries = {...items};
-        // console.log(groceries);
         if (!isLoaded) {
             return <div>Loading...</div>;
         }    
@@ -39,12 +37,13 @@ class App extends React.Component {
         return (
             <div className="App">
                 <Header></Header>               
-                <Container>            
+                <Container className="mainContainer">            
                     <Grocerypage 
                         items={items}
                         recipes={recipes}                        
                     />
                 </Container>
+                <Footer></Footer>
             </div>
         );
     }

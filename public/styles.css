@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&family=Sacramento&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Oswald&family=Sacramento&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -15,6 +19,40 @@ body {
   padding: 0 16px;
 }
 
+main {
+  overflow: auto;
+  padding-bottom: 100px;
+  height: 2000px;
+}
+
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.mainContainer {
+  padding-bottom: 50px;
+}
+
+.footerStyle {
+  background-color: #0A8F83;
+  font-size: 20px;
+  font-family: 'Amatic SC', cursive;
+  color: white;
+  border-top: 1px solid #E7E7E7;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+}
+
+.footerText {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 header {
   background-color: #0A8F83;
   margin: auto -16px;
@@ -25,8 +63,99 @@ header {
 
 header h1 {
   color: #fff;
-  font-family: "McLaren", cursive;
+  font-family: 'Fredericka the Great', cursive;
   font-weight: 200;
+  font-size: 3.0rem;
+}
+
+.secondColumn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1rem;
+  max-width: 100%;
+}
+
+.inspirationHeader {
+  display: block;
+  font-family: 'Fredericka the Great', cursive;
+}
+
+.inspirationHeaderDiv {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.inspirationList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2rem;
+  max-width: 100%;
+}
+
+.inspirationList .inspirationCardDiv :hover {
+  cursor: pointer;
+}
+
+.inspirationList .inspirationCardDiv .inspirationCard {
+  border: none;
+  text-align: center;
+  width: 15rem;
+  background-color: #efc7ac !important;
+  -webkit-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border: 3px solid #DBBFAD;
+}
+
+.inspirationList .inspirationCardDiv .inspirationImageDiv {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inspirationList .inspirationCardDiv .inspirationImage {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px !important;
+}
+
+ul li {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1px;
+  font-family: 'Indie Flower', cursive;
+  margin-left: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .grocerylistheading h1 {
@@ -52,18 +181,6 @@ header h1 {
   margin-bottom: 20px;
 }
 
-ul {
-  margin-top: 10px !important;
-}
-
-li {
-  text-align: left;
-  position: relative;
-  margin-bottom: 1px;
-  font-family: 'Indie Flower', cursive;
-  margin-left: 10px;
-}
-
 .groceryNote {
   width: 100%;
   height: auto;
@@ -83,66 +200,6 @@ li {
           box-sizing: border-box;
 }
 
-footer {
-  position: absolute;
-  text-align: center;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-}
-
-footer p {
-  color: #ccc;
-}
-
-.note {
-  background: #fff;
-  border-radius: 7px;
-  -webkit-box-shadow: 0 2px 5px #ccc;
-          box-shadow: 0 2px 5px #ccc;
-  padding: 10px;
-  width: 240px;
-  margin: 16px;
-  float: left;
-}
-
-.note h1 {
-  font-size: 1.1em;
-  margin-bottom: 6px;
-}
-
-.note p {
-  font-size: 1.1em;
-  margin-bottom: 10px;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-.circle-img {
-  border-radius: 50%;
-  border: 3px solid #DBBFAD;
-  width: 50px;
-  height: 50px;
-  position: relative;
-}
-
-.name {
-  font-size: 0.8em;
-  color: #2d3436;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.productcolumn {
-  padding-top: 8px;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
 .grocerylist {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -153,7 +210,30 @@ footer p {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 4rem;
-  margin-left: 4rem;
+}
+
+.circle-img {
+  border-radius: 50%;
+  border: 3px solid #DBBFAD;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: #efc7ac;
+}
+
+.name {
+  font-size: 0.8em;
+  color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.productcolumn {
+  margin-bottom: auto;
 }
 
 .productlist {
@@ -165,31 +245,128 @@ footer p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-left: 4rem;
-  margin-top: 4rem;
+  margin-top: 2rem;
   max-width: 100%;
 }
 
 .productlist .card {
+  border: none;
   text-align: center;
-  width: 13rem;
-  height: 5rem;
-  margin-left: 1rem;
-  margin-bottom: 1.5rem;
+  width: 9rem;
+  height: 9rem;
   padding: 0.3rem;
-  border-radius: 3px;
-  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05), 0 5px 20px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05), 0 5px 20px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: transparent;
   -webkit-transition: all 100ms ease-in-out;
   transition: all 100ms ease-in-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 0;
 }
 
 .productlist .card .container .row {
   padding: 0.1rem;
+}
+
+.productCardName {
+  font-size: 1.0rem;
+  margin-top: -8px;
+  letter-spacing: 1px;
+  font-family: 'Amatic SC', cursive;
+}
+
+.recipeAddButton {
+  margin-left: 80px !important;
+  border-radius: 50% !important;
+  width: 26px !important;
+  font-size: 13px;
+  margin-top: -31px;
+  margin-left: 85px;
+  position: absolute;
+  padding: 2px 2px;
+}
+
+.recipeNameBox {
+  height: 80%;
+}
+
+.recipelist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2rem;
+  max-width: 100%;
+}
+
+.recipelist .card {
+  border: none;
+  text-align: center;
+  width: 15rem;
+  padding: 0.3rem;
+  background-color: #efc7ac !important;
+  -webkit-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border: 3px solid #DBBFAD;
+}
+
+.recipelist .card .recipeCardImage {
+  width: 14rem;
+  height: 9rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.recipelist .card .recipeImage {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.recipelist .card .container .row {
+  padding: 0.1rem;
+}
+
+.toggleArrow {
+  width: 50%;
+}
+
+.togglebutton {
+  background-color: transparent !important;
+  border: none !important;
+  height: 2rem;
+  width: 2rem;
+  padding: 0.3rem !important;
+}
+
+.togglebutton:focus {
+  border: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.printcol-1 {
+  min-width: 250px;
+}
+
+.alertnote {
+  font-size: 14px;
+  color: #AD6A6C;
+  margin-top: 15px;
+  border: 1px solid #AD6A6C;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 button {
@@ -199,11 +376,15 @@ button {
   outline: 0;
   background-color: #0A8F83;
   border: 1px solid #0A8F83;
-  padding: 2px 2px;
   color: white;
   border-radius: 3px !important;
-  width: 90px;
   font-size: 18px;
+}
+
+.squareButton {
+  width: 90px;
+  padding: 2px 2px;
+  margin-right: 5px;
 }
 
 .addButtonDiv {
@@ -214,8 +395,77 @@ button {
   border-radius: 50% !important;
   width: 26px !important;
   font-size: 13px;
-  margin-top: -20px;
-  margin-left: -25px;
+  margin-top: -40px;
+  margin-left: -40px;
   position: absolute;
+  padding: 2px 2px;
+}
+
+.listButton {
+  border-radius: 50% !important;
+  width: 20px !important;
+  font-size: 13px;
+  margin-left: 10px;
+  background-color: transparent;
+  border: none !important;
+  color: #0A8F83;
+}
+
+.deleteButton {
+  border-radius: 50% !important;
+  width: 26px !important;
+  font-size: 13px;
+  color: red;
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+}
+
+.productsButton {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 15px;
+  width: 240px;
+  height: 100px;
+  background-image: url(images/products.jpg);
+  background-position: center;
+  font-size: 3.6rem;
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px #000000;
+}
+
+.recipesButton {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 15px;
+  width: 240px;
+  height: 100px;
+  background-image: url(images/madras.jpg);
+  background-position: center;
+  font-size: 3.6rem;
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px #000000;
+}
+
+.cancelButton {
+  width: 90px;
+  padding: 2px 2px;
+  margin-right: 5px;
+  background-color: #AD6A6C;
+  border: #AD6A6C;
+}
+
+.okButton {
+  width: 90px;
+  padding: 2px 2px;
+  margin-right: 5px;
+}
+
+.printButton {
+  margin-top: 58px;
+  padding: 2px 2px;
+  width: 120px;
 }
 /*# sourceMappingURL=styles.css.map */

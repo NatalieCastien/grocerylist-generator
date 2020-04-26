@@ -1,6 +1,6 @@
 import React from "react";
 import {Card, Button, Row, Col} from 'react-bootstrap';
-import { UncontrolledCollapse, CardBody } from 'reactstrap';
+import { UncontrolledCollapse } from 'reactstrap';
 import AddRecipeButton from "./AddRecipeButton";
 
 function RecipeCard(props) {  
@@ -23,11 +23,13 @@ function RecipeCard(props) {
   const recipeId = props.identifier;
   const togglerId = "toggler" + recipeId;
   const togglerHash = "#" + togglerId;
+  const image = "images/" + props.img;
+  const arrowdown = "images/arrow-down.png";
 
   return (
       <Card className="recipeCard">
         <div className="recipeCardImage">
-          <img className="recipeImage" src={props.img} alt="Card image cap" />
+          <img className="recipeImage" src={image} alt="Card image cap" />
         </div>
 
         <div className="" 
@@ -46,7 +48,7 @@ function RecipeCard(props) {
           </div>
           <div>      
           <Button className="togglebutton" id={togglerId}>
-            <img className="toggleArrow" src="arrow-down.png" alt="arrow down" />
+            <img className="toggleArrow" src={arrowdown} alt="arrow down" />
           </Button>
 
           <UncontrolledCollapse toggler={togglerHash}>              
