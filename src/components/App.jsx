@@ -24,8 +24,7 @@ class App extends React.Component {
                 isLoaded: true,
             })
         });
-    }
-      
+    }          
 
     render() {       
         var { isLoaded, items } = this.state;
@@ -40,7 +39,7 @@ class App extends React.Component {
                 <Container className="mainContainer">            
                     <Grocerypage 
                         items={items}
-                        recipes={recipes}                        
+                        recipes={recipes}    
                     />
                 </Container>
                 <Footer></Footer>

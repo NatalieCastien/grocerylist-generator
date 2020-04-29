@@ -56,6 +56,7 @@ header {
       font-family: 'Fredericka the Great', cursive;
       font-weight: 200;
       font-size: 3.0rem;
+      text-align: center;
   }
 }
 .secondColumn {
@@ -394,6 +395,19 @@ button {
 .printButton {
   margin-top: 58px;
   padding: 2px 2px;
-  width: 120px;
+  width: 130px;
 }
 // ENDBUTTONS
+
+// MEDIA QUERIES
+@media only screen and (max-width: 600px) {
+  header {
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  .groceryNote {
+    min-width: 300px !important;
+  }
+}
+// END MEDIA QUERIES

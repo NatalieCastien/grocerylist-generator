@@ -1,11 +1,12 @@
 {
-  "name": "keeper-app-part-1-starting",
+  "name": "grocerylist-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "Create your own grocery items, with a little bit of inspiration from products and recipes",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
     "bootstrap": "^4.4.1",
+    "gh-pages": "^2.2.0",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.8.6",

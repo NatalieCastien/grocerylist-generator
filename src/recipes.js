@@ -294,7 +294,7 @@ const recipes = [
     {
         id: 8,
         img: "quiche.jpg",
-        name: "Quich",
+        name: "Quiche",
         description: "Quiche with asparagus and mushrooms",
         ingredients: [
             {   

@@ -148,8 +148,9 @@ function Grocerypage(props) {
       })     
   }
     
-    // Add product to te list via the input field
+    // Add product manually to the list via the input field
       function onAdd(name, count) {
+        // Because the input can have lowercase and uppercase first letter, just make them all have an uppercase first letter
         var nameUppercase = name.charAt(0).toUpperCase() + name.slice(1);
         const productOnList = productExists([nameUppercase]);
         
@@ -275,12 +276,12 @@ function Grocerypage(props) {
     <div>
         <Row>
             <Col className="col-md-4">
-            <button className="printButton" onClick={showPrintAlert}>Print grocerylist</button>
+            <button className="printButton" onClick={showPrintAlert} style={{display: showList}}>Print grocerylist</button>
             <div style={{display: showPrintMessage}}>
               <AlertNote 
                 accept={printGroceryList}
                 cancel={hidePrintMessage}                
-              />   
+              />
             </div>         
 
                 <div id="groceryListDiv" className="grocerylist">                
@@ -289,12 +290,14 @@ function Grocerypage(props) {
                         <h1>{grocerylistName}</h1>
                     </div>
 
-                    <form className="form" onSubmit={handleSubmit} onKeyPress={handleKeyPress} style={{display: showHeaderForm}}>
+                    <form className="form" onSubmit={handleSubmit} onKeyPress={handleKeyPress} style={{display: showHeaderForm}}>                    
                         <input 
+                            id="grocerylistName"
                             type="text"
                             placeholder="the name of your grocerylist"
                             onChange={handleChange}
                             value={name}
+                            autocomplete="off"
                         />
                         <button className="squareButton" type="submit">Save</button>
                     </form>
