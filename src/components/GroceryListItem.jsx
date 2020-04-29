@@ -1,6 +1,6 @@
 import React from "react";
-import AddButton from "./AddButton";
-import SubtractButton from "./SubtractButton";
+import AddButton from "./+Button";
+import SubtractButton from "./-Button";
 
 function GroceryListItem(props) {
     const listbuttonKey = "button" + props.id;

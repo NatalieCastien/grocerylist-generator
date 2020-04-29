@@ -113,6 +113,7 @@ function Grocerypage(props) {
         }   
     }
 
+    // Add products via the recipe cards
     function addRecipeItems(ingredients) {
       var previousTime = 0;
       ingredients.map(function addproduct(ingredient) {
@@ -201,6 +202,7 @@ function Grocerypage(props) {
         }
       }
 
+      // When pressed '+'
       function addCount(name) {
             const index = getIndex(name);
             const object = list[index];
@@ -220,6 +222,7 @@ function Grocerypage(props) {
               });            
       }
 
+      // When pressed '-'
       function subtractCount(name) {
         const index = getIndex(name);
         const object = list[index];
@@ -243,6 +246,7 @@ function Grocerypage(props) {
     
   }
 
+  // Create a table for the printable version
   function createTable(listItem, index) {
    const lastItem = list.length - 1;
    if (index != lastItem) {
@@ -258,11 +262,9 @@ function Grocerypage(props) {
   function showPrintAlert() {
     setShowPrintMessage("inline");
   }
-
   function hidePrintMessage() {
     setShowPrintMessage("none");
   }
-
   function printGroceryList() {
 
     const printableElements = document.getElementById('groceries').innerHTML;
@@ -272,6 +274,7 @@ function Grocerypage(props) {
     document.body.innerHTML = oldPage;
   }
 
+  
     return(
     <div>
         <Row>
