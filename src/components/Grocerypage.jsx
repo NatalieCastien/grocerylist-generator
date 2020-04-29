@@ -276,7 +276,7 @@ function Grocerypage(props) {
     <div>
         <Row>
             <Col className="col-md-4">
-            <button className="printButton" onClick={showPrintAlert} style={{display: showList}}>Print grocerylist</button>
+            <button className="printButton" onClick={showPrintAlert} style={{display: showList}}>Print grocery list</button>
             <div style={{display: showPrintMessage}}>
               <AlertNote 
                 accept={printGroceryList}
@@ -294,7 +294,7 @@ function Grocerypage(props) {
                         <input 
                             id="grocerylistName"
                             type="text"
-                            placeholder="the name of your grocerylist"
+                            placeholder="the name of your grocery list"
                             onChange={handleChange}
                             value={name}
                             autocomplete="off"
